@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FitScore LEGAL™
 
-## Getting Started
+Aplicação front-end para avaliação de candidatos com base em **Performance**, **Energia** e **Cultura**.  
+O sistema calcula o **FitScore** de cada candidato, classifica em níveis e exibe os resultados em um dashboard interativo.
 
-First, run the development server:
+---
+
+## ✨ Funcionalidades
+
+### 1. Formulário FitScore
+- 10 perguntas divididas em 3 blocos:
+  - **Performance**: experiência, entregas, habilidades
+  - **Energia**: disponibilidade, prazos, pressão
+  - **Cultura**: visão viva, execução energizada, resultados com ressonância, alinhamento com alma
+- Preenchimento com escala **1 a 10**
+- Cálculo automático do **FitScore**
+- Classificação:
+  - **Fit Altíssimo** (≥ 80)
+  - **Fit Aprovado** (60–79)
+  - **Fit Questionável** (40–59)
+  - **Fora do Perfil** (< 40)
+- Notificação simulada via **SweetAlert2**
+
+---
+
+### 2. Dashboard
+- Lista de todos os candidatos avaliados
+- Exibição: Nome, E-mail, FitScore e Classificação
+- Filtros por classificação
+- Estatísticas gerais (total, aprovados, altíssimos)
+- Estados de loading, vazio e erro
+- Layout responsivo
+
+---
+
+### 3. Persistência
+- **LocalStorage** usado para salvar candidatos (mínimo viável).
+- Não há back-end real neste MVP.
+- Alternativas recomendadas: **Supabase**, **Firebase** ou JSON Server.
+
+---
+
+### 4. Processamento Assíncrono (simulado)
+- **Lógica 1 – Notificação de Resultado**
+  - Trigger: envio do formulário
+  - Ação: salva candidato no localStorage e mostra notificação (simulando e-mail enviado).
+- **Lógica 2 – Relatório de Aprovados**
+  - Trigger: execução automática (simulada a cada 60 segundos)
+  - Ação: consulta candidatos com FitScore ≥ 60
+  - Ação: mostra notificação para o gestor (simulando relatório enviado).
+
+💡 **Extra**: possível evoluir para enviar notificações reais via e-mail/SMS integrando com Supabase ou serviços externos.
+
+---
+
+## 🚀 Tecnologias
+
+- [Next.js](https://nextjs.org/) + React
+- [lucide-react](https://lucide.dev/) – ícones
+- [SweetAlert2](https://sweetalert2.github.io/) – notificações
+- **LocalStorage** – persistência local (simulada)
+
+---
+
+## ⚙️ Como rodar o projeto
 
 ```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/fitscore-legal.git
+
+# Acesse a pasta
+cd fitscore-legal
+
+# Instale as dependências
+npm install
+
+# Rode o servidor de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Acesse em http://localhost:3000
