@@ -1,0 +1,47 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, #0070f3, #00c6ff);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.50rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+    /* letter-spacing: 0.05em; */
+}
+
+.brainIcon {
+    color: hsl(182, 100%, 51%);
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navItem {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.navItem:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 782px) {
+  .header {
+    display: none;
+  }
+}

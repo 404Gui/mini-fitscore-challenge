@@ -1,0 +1,83 @@
+.headerMobile {
+  background: linear-gradient(90deg, #0070f3, #00c6ff);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: none;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.brainIcon {
+  color: #00f5d4;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.menuButton:active {
+  transform: scale(0.9);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #0057c2;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0 0 12px 12px;
+}
+
+.menu.open {
+  padding: 1rem;
+  max-height: 200px;
+}
+
+.menuItem {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.menuItem:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 782px) {
+  .headerMobile {
+    display: block;
+  }
+}
+
+@media (min-width: 783px) {
+  .headerMobile {
+    display: none;
+  }
+}
